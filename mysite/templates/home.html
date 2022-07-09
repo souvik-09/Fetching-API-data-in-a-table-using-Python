@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Table</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <style>
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center p-3">STORING API DATA IN A TABLE</h1>
+    <div class="container">
+    <table class="table table-bordered">
+
+        <thead class= "table-dark">
+        <th scope="col">Name</th>
+        <th scope="col">Capital</th>
+        <th scope="col">Population</th>
+        <th scope="col">Borders</th>
+        <th scope="col">Flag</th>
+        </thead>
+
+
+
+    {% for i  in response %}
+    <tr>
+        
+        <td>{{i.name.common}}</td>
+        <td>{{i.capital}}</td>
+        <td>{{i.population}}</td>
+        <td>{{i.borders}}</td>
+        <td><img src="{{i.flags.png}}"/></td>
+
+    </tr>    
+
+    {% endfor %}
+    </table>
+
+</body>
+</html>    
